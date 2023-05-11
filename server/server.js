@@ -17,14 +17,16 @@ app.use(cors());
 const server = http.createServer(app);
 
 // Connect to database
-mongoose.connect(process.env.MONGO_URI)
-.then(() => {
-// launch server and listen
-    server.listen(PORT, () => {
-        console.log(`Server is listening on ${PORT}`);
-    });
-})
-.catch(err => {
-    console.log('Database connection failed. Server not started.');
-    console.log(err);
-})
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+        // launch server and listen
+        server.listen(PORT, () => {
+            console.log(`Server is listening on ${PORT}`);
+        });
+    })
+    .catch(err => {
+        // If error, tell user and give error in console
+        console.log('Database connection failed. Server not started.');
+        console.log(err);
+    })
