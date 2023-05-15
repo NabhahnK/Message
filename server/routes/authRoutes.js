@@ -1,6 +1,9 @@
 // import router from express.
 const express = require('express');
 const router = express.Router();
+// importing validation dependencies
+const Joi = require('joi');
+const validator = require('express-joi-validation').createValidator({});
 
 // importing logic from controllers
 const authControllers = require('../controllers/auth/authControllers');
