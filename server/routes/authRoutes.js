@@ -20,9 +20,16 @@ const loginSchema = Joi.object({
 });
 
 // route to register new user.
-router.post('/register', validator.body(registerSchema) ,authControllers.controllers.postRegister);
+router.post(
+    '/register',
+    validator.body(registerSchema),
+    authControllers.controllers.postRegister
+);
 
 // route for user login.
-router.post('/login', validator.body(loginSchema) ,authControllers.controllers.postLogin);
+router.post('/login',
+    validator.body(loginSchema),
+    authControllers.controllers.postLogin
+);
 
 module.exports = router;
