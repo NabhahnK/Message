@@ -3,9 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // route to resgister new user.
-router.post('/register', (req, res) => {
-    res.send('register route');
-});
+router.post('/register', );
 
 // route for user login.
 router.post('/login', (req, res) => {
