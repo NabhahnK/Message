@@ -14,6 +14,11 @@ const registerSchema = Joi.object({
     main: Joi.string.email(),
 });
 
+const loginSchema = Joi.object({
+    password: Joi.string().min(6).max(12),
+    main: Joi.string.email(),
+});
+
 // route to register new user.
 router.post('/register', authControllers.controllers.postRegister);
 
