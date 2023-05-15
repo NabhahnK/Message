@@ -11,12 +11,12 @@ const validator = require('express-joi-validation').createValidator({});
 const registerSchema = Joi.object({
     username: Joi.string().min(3).max(12),
     password: Joi.string().min(6).max(12),
-    main: Joi.string.email(),
+    mail: Joi.string().min(6).required().email(),
 });
 
 const loginSchema = Joi.object({
     password: Joi.string().min(6).max(12),
-    main: Joi.string.email(),
+    mail: Joi.string().min(6).required().email(),
 });
 
 // route to register new user.
