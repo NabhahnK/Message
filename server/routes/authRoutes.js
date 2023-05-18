@@ -32,4 +32,6 @@ router.post('/login',
     authControllers.controllers.postLogin
 );
 
+// test route to test auth.js middleware
+
 module.exports = router;
