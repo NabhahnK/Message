@@ -13,7 +13,7 @@ const postLogin = async (req, res) => {
         // check if user email is in DB
         const user = await User.findOne({ mail: mail.toLowerCase() });
 
-        // check if pass word and email mathc DB
+        // check if pass word and email match DB
         if (user && (await bcrypt.compare(password, user.password))) {
             // send new token
             const token = jwt.sign(
