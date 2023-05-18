@@ -6,6 +6,8 @@ const authControllers = require('../controllers/auth/authControllers');
 // importing validation dependencies
 const Joi = require('joi');
 const validator = require('express-joi-validation').createValidator({});
+// import middleware
+const auth = require('../middleware/auth');
 
 // create validation schema
 const registerSchema = Joi.object({
@@ -33,5 +35,8 @@ router.post('/login',
 );
 
 // test route to test auth.js middleware
+router.get('/test', auth, (req, res) => {
+    res.send("request passed");
+});
 
 module.exports = router;
